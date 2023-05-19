@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: #000;
+  --background-start-rgb: #fff;
+  --background-end-rgb: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+button, input, textarea {
+  outline: 0 !important;
+}
+
+.video-background-signin {
+  background: linear-gradient(0deg, #A0CE4F -7.32%, rgba(0, 159, 227, 0) 121.34%);
+}
+
+.video-background-signup {
+  background: linear-gradient(0deg, #009FE3 -7.32%, rgba(0, 159, 227, 0) 121.34%);
+}
+
+.button-background {
+  background: linear-gradient(92.54deg, #A0CE4F -27.12%, #009FE3 127.57%);
+}
