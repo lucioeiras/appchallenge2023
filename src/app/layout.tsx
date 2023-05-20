@@ -3,11 +3,6 @@ import { Rubik } from 'next/font/google'
 
 const rubik = Rubik({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Medidor de consumo ViaSat',
-  description: 'Monitore o consumo da sua internet e tenha insights sobre o seu uso',
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -15,6 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
+      <head>
+        <title>Medidor de Consumo | ViaSat</title>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={rubik.className}>{children}</body>
     </html>
   )

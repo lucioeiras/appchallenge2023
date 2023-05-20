@@ -31,8 +31,6 @@ export default function SignUpPage() {
   async function onSubmit(e: FormEvent) {
     e.preventDefault()
 
-    console.log(process.env.NEXT_PUBLIC_API_URL)
-
     if (password === confirmPassword) {
       await user.register(name, email, password)
       router.push('/home')

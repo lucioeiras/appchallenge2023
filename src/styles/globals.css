@@ -41,3 +41,8 @@ button, input, textarea {
 .button-background {
   background: linear-gradient(92.54deg, #A0CE4F -27.12%, #009FE3 127.57%);
 }
+
+.tab-active {
+  background: linear-gradient(270.26deg, #A0CE4F -182.34%, rgba(160, 206, 79, 0) 49.96%), #FFFFFF;
+  border-right: 1px solid #A0CE4F;
+}
