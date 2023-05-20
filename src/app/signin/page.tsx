@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { useRouter } from 'next/navigation'
 import { FormEvent, useContext, useState } from 'react'
 
 import UserContext from '../../contexts/user'
@@ -16,19 +17,18 @@ import {
   WifiMedium,
 } from '@phosphor-icons/react'
 
-export default function Page() {
+export default function SignInPage() {
+  const router = useRouter()
   const user = useContext(UserContext)
 
-  const [email, setEmail] = useState<String>('')
-  const [password, setPassword] = useState<String>('')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault()
 
-    console.log(email, password)
-
     await user.login(email, password)
-    console.log(user.data.token)
+    router.push('/home')
   }
 
   return (
@@ -70,7 +70,7 @@ export default function Page() {
       </div>
 
       <div className="w-1/2 p-20 flex flex-col items-center justify-center">
-        <h2 className="text-3xl text-slate-800 font-medium text-center">
+        <h2 className="text-3xl text-slate-800 font-light text-center">
           Entre na sua conta
         </h2>
         <p className="text-center mt-4 text-slate-500">

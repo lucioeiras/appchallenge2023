@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { useRouter } from 'next/navigation'
 import { useContext, useState, FormEvent } from 'react'
 
 import UserContext from '../../contexts/user'
@@ -18,13 +19,14 @@ import {
   ShieldCheck,
 } from '@phosphor-icons/react'
 
-export default function Page() {
+export default function SignUpPage() {
+  const router = useRouter()
   const user = useContext(UserContext)
 
-  const [name, setName] = useState<String>('')
-  const [email, setEmail] = useState<String>('')
-  const [password, setPassword] = useState<String>('')
-  const [confirmPassword, setConfirmPassword] = useState<String>('')
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [confirmPassword, setConfirmPassword] = useState<string>('')
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault()
@@ -33,6 +35,7 @@ export default function Page() {
 
     if (password === confirmPassword) {
       await user.register(name, email, password)
+      router.push('/home')
     }
   }
 
@@ -75,7 +78,7 @@ export default function Page() {
       </div>
 
       <div className="w-1/2 p-20 flex flex-col items-center justify-center">
-        <h2 className="text-3xl text-slate-800 font-medium text-center">
+        <h2 className="text-3xl text-slate-800 font-light text-center">
           Crie sua conta
         </h2>
         <p className="text-center mt-4 text-slate-500">
