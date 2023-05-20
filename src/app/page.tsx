@@ -3,7 +3,7 @@
 import { useContext } from 'react'
 import { useRouter } from 'next/navigation'
 
-import UserContext from '../contexts/user'
+import UserContext from '@/contexts/user'
 
 export default function Home() {
   const router = useRouter()

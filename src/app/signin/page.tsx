@@ -6,8 +6,6 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { FormEvent, useContext, useState } from 'react'
 
-import UserContext from '../../contexts/user'
-
 import {
   EnvelopeSimple,
   Key,
@@ -16,6 +14,8 @@ import {
   Laptop,
   WifiMedium,
 } from '@phosphor-icons/react'
+
+import UserContext from '@/contexts/user'
 
 export default function SignInPage() {
   const router = useRouter()

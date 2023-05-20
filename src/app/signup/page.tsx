@@ -6,8 +6,6 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useContext, useState, FormEvent } from 'react'
 
-import UserContext from '../../contexts/user'
-
 import {
   EnvelopeSimple,
   Key,
@@ -18,6 +16,8 @@ import {
   Smiley,
   ShieldCheck,
 } from '@phosphor-icons/react'
+
+import UserContext from '@/contexts/user'
 
 export default function SignUpPage() {
   const router = useRouter()
